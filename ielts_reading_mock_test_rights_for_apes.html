@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Lê Hằng English - IELTS Reading Mock Test: Rights for Apes</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        },
+                        gamify: {
+                            green: '#22c55e',
+                            red: '#ef4444',
+                            yellow: '#eab308',
+                            purple: '#a855f7',
+                            pastelPurple: '#e9d5ff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* 3D Button Effects */
+        .btn-3d {
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2);
+        }
+        .btn-3d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.2);
+        }
+        .btn-3d:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-3d-green {
+            background-color: #22c55e;
+            box-shadow: 0 4px 0 0 #15803d;
+        }
+        .btn-3d-green:hover {
+            box-shadow: 0 6px 0 0 #15803d;
+        }
+        .btn-3d-green:active {
+            box-shadow: 0 1px 0 0 #15803d;
+        }
+
+        .btn-3d-blue {
+            background-color: #3b82f6;
+            box-shadow: 0 4px 0 0 #1d4ed8;
+        }
+        .btn-3d-blue:hover {
+            box-shadow: 0 6px 0 0 #1d4ed8;
+        }
+        .btn-3d-blue:active {
+            box-shadow: 0 1px 0 0 #1d4ed8;
+        }
+
+        /* Custom Selection / Highlight style */
+        ::selection {
+            background-color: #d8b4fe !important;
+            color: #4c1d95 !important;
+        }
+        .custom-highlight {
+            background-color: #e9d5ff !important;
+            color: #581c87 !important;
+            border-radius: 3px;
+            padding: 1px 3px;
+            font-weight: 600;
+        }
+
+        /* Target indicator animation */
+        @keyframes pulse-highlight {
+            0% { background-color: #fef08a; transform: scale(1); }
+            50% { background-color: #fde047; transform: scale(1.02); }
+            100% { background-color: #fef08a; transform: scale(1); }
+        }
+        .evidence-target {
+            animation: pulse-highlight 1.5s ease-in-out infinite;
+            border-left: 4px solid #ca8a04;
+            padding-left: 8px;
+            border-radius: 4px;
+        }
+
+        /* Split view styling */
+        .split-container {
+            height: calc(100vh - 125px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 flex flex-col h-screen overflow-hidden select-text">
+
+    <!-- TOP HEADER -->
+    <header class="bg-white border-b border-slate-200 px-4 py-2 flex flex-wrap items-center justify-between shadow-sm z-20 shrink-0">
+        <!-- Left Banner Info -->
+        <div class="flex flex-col">
+            <span class="text-xs font-bold text-sky-700 uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-200 inline-block w-fit">
+                Giáo viên tạo: Ms Lê Hằng English | IELTS READING MOCK TEST
+            </span>
+            <h1 class="text-sm font-bold text-pink-600 mt-0.5 flex items-center gap-1.5">
+                <i class="fa-solid fa-phone-volume text-xs"></i> 
+                Đăng kí học tiếng Anh 1-12, IELTS vui lòng liên hệ Ms Lê Hằng, Zalo: <span class="underline underline-offset-2 font-extrabold text-slate-900">0584 965 348</span>
+            </h1>
+        </div>
+
+        <!-- Center Controls: Timer & Progress -->
+        <div class="flex items-center gap-4 my-1 sm:my-0">
+            <!-- Timer Box -->
+            <div class="bg-slate-100 border border-slate-300 rounded-xl px-3 py-1 flex items-center gap-2 shadow-inner">
+                <i class="fa-regular fa-clock text-sky-600 text-lg"></i>
+                <span id="timer-display" class="font-mono text-xl font-black text-slate-800">20:00</span>
+                <button id="start-pause-btn" onclick="toggleTimer()" class="ml-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg btn-3d-blue transition">
+                    <i class="fa-solid fa-play mr-1"></i> BẮT ĐẦU TÍNH GIỜ LÀM BÀI
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="hidden md:flex flex-col w-36">
+                <div class="flex justify-between text-xs font-bold text-slate-600 mb-0.5">
+                    <span>Tiến độ</span>
+                    <span id="progress-text">0/14 (0%)</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-emerald-500 h-full w-0 transition-all duration-300"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Action Button -->
+        <div class="flex items-center gap-2">
+            <button onclick="highlightSelectedText()" class="bg-purple-100 hover:bg-purple-200 text-purple-800 text-xs font-bold px-3 py-2 rounded-lg border border-purple-300 transition flex items-center gap-1">
+                <i class="fa-solid fa-highlighter text-purple-600"></i> Highlight
+            </button>
+            <button onclick="submitExam()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-black px-5 py-2 rounded-xl btn-3d-green transition flex items-center gap-1.5">
+                <i class="fa-solid fa-paper-plane"></i> NỘP BÀI
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT - SPLIT SCREEN -->
+    <main class="flex-1 flex flex-col md:flex-row overflow-hidden split-container bg-slate-100 p-2 gap-2">
+
+        <!-- LEFT PANE: READING PASSAGE -->
+        <section class="w-full md:w-1/2 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
+            <!-- Passage Title Header -->
+            <div class="bg-slate-800 text-white px-5 py-3 flex justify-between items-center shrink-0 border-b border-slate-700">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-book-open text-sky-400"></i>
+                    <h2 class="font-bold text-base md:text-lg tracking-wide">READING PASSAGE: Rights for Apes</h2>
+                </div>
+                <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full font-medium">IELTS Academic</span>
+            </div>
+
+            <!-- Passage Body Scrollable -->
+            <div id="passage-content" class="flex-1 p-6 overflow-y-auto space-y-6 text-slate-800 text-base leading-relaxed select-text">
+
+                <!-- Paragraph 1 -->
+                <div id="para-1" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[1]</strong>
+                        Humans have rights, other animals don’t – no matter how human-like they are. Kate Douglas investigates the controversial campaign to get that changed. A growing number of people across the world are attempting to persuade governments to grant great apes rudimentary ‘human rights’. They argue that great apes are enough like us to deserve special treatment over other animals. The campaign has gathered momentum over the past few years and is stirring up a good deal of controversy. Various religious groups and the human rights charity, Amnesty International, point out that we have a long way to go to secure rights for humans before we start thinking about animals. Other critics argue that the proposal is not radical enough and should be extended to other intelligent social animals such as elephants and dolphins, and potentially to all animals.
+                    </p>
+                    <button onclick="toggleTranslation('trans-1')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-1" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Con người có quyền, các loài động vật khác thì không – cho dù chúng giống người đến mức nào. Kate Douglas tìm hiểu về chiến dịch đầy tranh cãi nhằm thay đổi điều đó. Một số lượng ngày càng tăng người dân trên toàn thế giới đang cố gắng thuyết phục các chính phủ cấp các 'quyền con người' cơ bản cho loài đại nhân hình (vượn lớn). Họ cho rằng vượn lớn đủ giống chúng ta để xứng đáng nhận được sự đối xử đặc biệt so với các loài động vật khác. Chiến dịch đã tạo được đà phát triển trong vài năm qua và đang dấy lên nhiều tranh cãi. Nhiều nhóm tôn giáo và tổ chức từ thiện quyền con người Amnesty International chỉ ra rằng chúng ta còn một chặng đường dài phải đi để đảm bảo quyền cho con người trước khi bắt đầu nghĩ đến động vật. Những nhà phê bình khác lại cho rằng đề xuất này chưa đủ triệt để và nên được mở rộng sang các loài động vật xã hội thông minh khác như voi và cá heo, và có khả năng là tất cả động vật.
+                    </div>
+                </div>
+
+                <!-- Paragraph 2 -->
+                <div id="para-2" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[2]</strong>
+                        The Great Ape Project (GAP) is an international organisation that has been lobbying for legal rights for apes since 1993. The project has had some degree of success. New Zealand considered the possibility of extending human rights to great apes in 1999 as part of its new animal welfare bill. In the end, the bill did not go as far as granting apes individual legal rights, but did give them special status. Testing or teaching involving apes now requires government approval and must demonstrate that any likely benefits are not outweighed by harm to the individual animal. In effect that means no biomedical testing, only studies that increase our understanding of these species. The practice of using apes in biomedical research has also effectively ended in Europe now. So with all this legal protection in place, what’s the big deal about individual rights? GAP campaigners say that these regulations don’t go far enough and they still allow people who own great apes to lawfully neglect their needs. Michele Stumpe, a lawyer based in the US, points out that without rights, animals are mere property and their owners have no obligation to consider their best interests. Legally, however, only ‘persons’ can have ‘rights’, which is why the law needs to be changed to recognise the ‘personhood’ of apes.
+                    </p>
+                    <button onclick="toggleTranslation('trans-2')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-2" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Dự án Vượn lớn (GAP) là một tổ chức quốc tế đã vận động hành lang cho quyền pháp lý của vượn lớn kể từ năm 1993. Dự án đã đạt được một số thành công nhất định. New Zealand đã xem xét khả năng mở rộng quyền con người cho vượn lớn vào năm 1999 như một phần của dự luật phúc lợi động vật mới. Cuối cùng, dự luật không đi xa đến mức trao quyền pháp lý cá nhân cho vượn, nhưng đã trao cho chúng tư cách đặc biệt. Việc thử nghiệm hoặc giảng dạy liên quan đến vượn hiện yêu cầu sự phê duyệt của chính phủ và phải chứng minh rằng bất kỳ lợi ích tiềm năng nào cũng không bị lấn áp bởi tác hại đối với cá thể động vật đó. Trên thực tế, điều đó có nghĩa là không thử nghiệm sinh y học, chỉ có các nghiên cứu giúp tăng cường sự hiểu biết của chúng ta về các loài này. Thực tiễn sử dụng vượn trong nghiên cứu sinh y học hiện cũng đã chấm dứt hiệu quả ở Châu Âu. Vì vậy, với tất cả sự bảo vệ pháp lý này, điều quan trọng về quyền cá nhân là gì? Các nhà vận động GAP nói rằng các quy định này chưa đủ xa và chúng vẫn cho phép những người sở hữu vượn lớn bỏ mặc nhu cầu của chúng một cách hợp pháp. Michele Stumpe, một luật sư làm việc tại Mỹ, chỉ ra rằng nếu không có quyền, động vật chỉ là tài sản thuần túy và chủ sở hữu của chúng không có nghĩa vụ phải xem xét lợi ích tốt nhất của chúng. Tuy nhiên, về mặt pháp lý, chỉ có 'thể nhân/con người' mới có thể có 'quyền', đó là lý do tại sao luật pháp cần phải thay đổi để công nhận 'tư cách pháp nhân' của vượn.
+                    </div>
+                </div>
+
+                <!-- Paragraph 3 -->
+                <div id="para-3" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[3]</strong>
+                        Stumpe says that one reason for the resistance is the use of terms like ‘rights’ and ‘personhood’. ‘It seems like a radical idea and that scares people, but when we talk about rights, it really just means protection in layman’s terms,’ she says. For the philosopher Peter Singer (Princeton University), the opposition runs deeper than just semantics. He says the great apes are ‘the victims of arbitrary discrimination’, or what he calls ‘speciesism’. He makes an argument on moral grounds for extending human rights to all beings that show intelligence and awareness – including some level of self-awareness – and have emotional and social needs. That means going beyond the boundaries of our own species – and therein lies the problem. ‘It’s that gulf between humans and animals that people want to maintain,’ he says. Others take a similar view. It requires a radical shift in people’s ideas about themselves, according to Ian Redmond, chief consultant for the UN Great Apes Survival Project. Gary Francione, a leading animal-rights lawyer from Rutgers University in Newark, New Jersey, and a member of the original GAP group, calls it ‘spiritual superiority’. ‘We just think we’re special because we’re human.’
+                    </p>
+                    <button onclick="toggleTranslation('trans-3')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-3" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Stumpe nói rằng một lý do dẫn đến sự phản đối là việc sử dụng các thuật ngữ như 'quyền' và 'tư cách pháp nhân'. 'Nó có vẻ giống như một ý tưởng cực đoan và điều đó làm mọi người sợ hãi, nhưng khi chúng ta nói về quyền, nó thực sự chỉ có nghĩa là sự bảo vệ theo cách nói bình dị của người bình thường,' cô nói. Đối với triết gia Peter Singer (Đại học Princeton), sự phản đối sâu sắc hơn chỉ là vấn đề ngữ nghĩa. Ông nói vượn lớn là 'nạn nhân của sự phân biệt đối xử độc đoán', hay cái mà ông gọi là 'chủ nghĩa phân biệt loài'. Ông đưa ra lập luận trên cơ sở đạo đức về việc mở rộng quyền con người cho tất cả các sinh vật thể hiện trí thông minh và sự nhận thức – bao gồm một số mức độ tự nhận thức – và có các nhu cầu cảm xúc và xã hội. Điều đó có nghĩa là vượt qua ranh giới của loài chúng ta – và đó chính là vấn đề. 'Chính khoảng cách/vực sâu đó giữa con người và động vật là điều mà mọi người muốn duy trì,' ông nói. Những người khác cũng có quan điểm tương tự. Nó đòi hỏi một sự thay đổi căn bản trong ý tưởng của mọi người về bản thân họ, theo Ian Redmond, cố vấn trưởng của Dự án Sinh tồn Vượn lớn của Liên Hợp Quốc. Gary Francione, một luật sư hàng đầu về quyền động vật từ Đại học Rutgers ở Newark, New Jersey, và là thành viên của nhóm GAP ban đầu, gọi đó là 'sự thượng đẳng về tinh thần'. 'Chúng ta chỉ nghĩ rằng mình đặc biệt vì chúng ta là con người.'
+                    </div>
+                </div>
+
+                <!-- Paragraph 4 -->
+                <div id="para-4" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[4]</strong>
+                        Those less sympathetic to the animal rights agenda see things rather differently. Some argue that beyond the species barrier lies a slippery slope. ‘Mice share around 90 per cent of human DNA: should they get 90 per cent of human rights?’ asks geneticist Steve Jones from University College, London. He is concerned that giving rights to great apes would be the beginning of the end of all research with animals. Singer accepts that there is a question about where you draw the line, but sees no reason for that to stop society from taking the first step. ‘The strongest and clearest case is with great apes, but we’re open to arguments that it could be extended to other mammals,’ he says.
+                    </p>
+                    <button onclick="toggleTranslation('trans-4')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-4" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Những người ít đồng cảm hơn với chương trình nghị sự về quyền động vật nhìn nhận mọi thứ khá khác biệt. Một số người tranh luận rằng đằng sau rào cản loài là một 'vệt dốc trơn trượt' (tình huống dễ dẫn đến hậu quả xấu). 'Chuột chia sẻ khoảng 90% DNA của con người: liệu chúng có nên nhận được 90% quyền con người?' nhà di truyền học Steve Jones từ University College, London đặt câu hỏi. Ông lo ngại rằng việc trao quyền cho vượn lớn sẽ là sự khởi đầu cho cái kết của mọi nghiên cứu với động vật. Singer chấp nhận rằng có câu hỏi về việc đặt ra ranh giới ở đâu, nhưng không thấy lý do gì khiến xã hội ngừng bước đi bước đầu tiên. 'Trường hợp mạnh mẽ và rõ ràng nhất là với các loài vượn lớn, nhưng chúng tôi sẵn sàng tiếp nhận các lập luận rằng nó có thể được mở rộng sang các loài động vật có vú khác,' ông nói.
+                    </div>
+                </div>
+
+                <!-- Paragraph 5 -->
+                <div id="para-5" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[5]</strong>
+                        Some take it even further. Francione no longer supports the idea of extending rights to great apes on the basis that their minds are like ours. Instead, he argues that all sentient beings should have just one right: the right not to be treated as the property of humans. He believes his approach has the advantage of simplicity, because sentience – the ability to feel pain or distress – is an objective quality, and because it would bring an end to captive animals altogether. It would make it illegal to breed any animals, including agricultural animals and even pets. His ideas highlight a logical inconsistency at the heart of the GAP agenda: it seeks to give legal rights to animals but does not give them the right to be free. Francione’s approach is certainly several steps too far for many people.
+                    </p>
+                    <button onclick="toggleTranslation('trans-5')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-5" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Một số người thậm chí còn đi xa hơn. Francione không còn ủng hộ ý tưởng mở rộng quyền cho vượn lớn trên cơ sở rằng trí óc của chúng giống như chúng ta. Thay vào đó, ông tranh luận rằng tất cả các sinh vật có cảm giác nên chỉ có một quyền: quyền không bị đối xử như tài sản của con người. Ông tin rằng phương pháp của mình có ưu điểm là đơn giản, bởi vì khả năng cảm giác – khả năng cảm nhận nỗi đau hoặc sự đau khổ – là một phẩm chất khách quan, và bởi vì nó sẽ chấm dứt hoàn toàn việc giam giữ động vật. Nó sẽ khiến việc nhân giống bất kỳ động vật nào trở thành bất hợp pháp, bao gồm cả động vật nông nghiệp và thậm chí cả thú cưng. Ý tưởng của ông làm nổi bật sự bất nhất về mặt logic ở trung tâm của chương trình nghị sự GAP: nó tìm cách trao quyền pháp lý cho động vật nhưng không cho chúng quyền được tự do. Phương pháp của Francione chắc chắn là đã đi quá xa đối với nhiều người.
+                    </div>
+                </div>
+
+                <!-- Paragraph 6 -->
+                <div id="para-6" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[6]</strong>
+                        It is not clear what GAP’s proposals mean for wild apes, and even some of the animals’ most outspoken defenders are not convinced that giving them human rights is the best way to protect them. Primatologist Frans de Waal, from the Yerkes Regional Primate Research Center in Atlanta, US, says ‘The concept of rights applies only to those capable of carrying responsibilities within our society.’ He believes the emphasis should be on the obligations humans have towards other animals, both for their care and for their conservation.
+                    </p>
+                    <button onclick="toggleTranslation('trans-6')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-6" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Không rõ đề xuất của GAP có ý nghĩa gì đối với vượn hoang dã, và ngay cả một số nhà bảo vệ động vật thẳng thắn nhất cũng không thuyết phục rằng việc trao cho chúng quyền con người là cách tốt nhất để bảo vệ chúng. Nhà linh trưởng học Frans de Waal, từ Trung tâm Nghiên cứu Linh trưởng Vùng Yerkes ở Atlanta, Mỹ, nói 'Khái niệm về quyền chỉ áp dụng cho những ai có khả năng gánh vác trách nhiệm trong xã hội của chúng ta.' Ông tin rằng sự nhấn mạnh nên nằm ở những nghĩa vụ mà con người có đối với các loài động vật khác, cả về việc chăm sóc lẫn bảo tồn chúng.
+                    </div>
+                </div>
+
+                <!-- Paragraph 7 -->
+                <div id="para-7" class="transition-all duration-300 p-2 rounded-lg">
+                    <p class="mb-2">
+                        <strong class="text-slate-900 font-extrabold mr-1">[7]</strong>
+                        Redmond, on the other hand, suggests that applying GAP principles to wild populations might lead to increased penalties for killing apes or even give them land rights, though he admits the latter is unlikely. At the very least, an increased regard for the well-being of apes among people in western countries would lead to a decreased demand for animals being kidnapped from the wild and then exported to zoos, wildlife parks or private collectors.
+                    </p>
+                    <button onclick="toggleTranslation('trans-7')" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 border border-sky-200 px-3 py-1.5 rounded-lg transition inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-language"></i> Mở dịch đoạn này 🌟
+                    </button>
+                    <div id="trans-7" class="hidden mt-2 p-3 bg-amber-50/80 border-l-4 border-amber-400 text-sm text-slate-700 rounded-r-lg italic">
+                        <strong>Bản dịch:</strong> Mặt khác, Redmond gợi ý rằng việc áp dụng các nguyên tắc GAP cho các quần thể hoang dã có thể dẫn đến việc tăng hình phạt đối với việc giết hại vượn hoặc thậm chí trao cho chúng quyền sở hữu đất đai, mặc dù ông thừa nhận điều sau là khó xảy ra. Ít nhất, sự quan tâm gia tăng đến sự an lạc/phúc lợi của vượn ở những người ở các nước phương Tây sẽ dẫn đến sự sụt giảm cầu đối với động vật bị bắt cóc từ tự nhiên rồi xuất khẩu sang các vườn thú, công viên động vật hoang dã hoặc các nhà sưu tập tư nhân.
+                    </div>
+                </div>
+
+                <!-- GLOSSARY SECTION -->
+                <div class="mt-8 pt-6 border-t border-slate-300">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-book-bookmark text-emerald-600 text-xl"></i>
+                        <h3 class="font-extrabold text-lg text-slate-900">BẢNG TỪ VỰNG ACADEMIC HIGHLIGHT (GLOSSARY 50+ WORDS)</h3>
+                    </div>
+                    <div class="overflow-x-auto border border-slate-200 rounded-xl shadow-sm bg-white">
+                        <table class="w-full text-left text-xs md:text-sm text-slate-700 border-collapse">
+                            <thead class="bg-slate-100 text-slate-900 uppercase font-black text-xs border-b border-slate-200">
+                                <tr>
+                                    <th class="p-3 border-r">Từ Vựng (Academic)</th>
+                                    <th class="p-3 border-r">Loại Từ</th>
+                                    <th class="p-3">Nghĩa Tiếng Việt & Synonyms Trong Bài</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-medium">
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">1. Rudimentary</td><td class="p-2.5 border-r">adj</td><td class="p-2.5">Sơ khai, cơ bản ~ basic, elementary</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">2. Controversy</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Sự tranh cãi ~ dispute, debate</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">3. Gather momentum</td><td class="p-2.5 border-r">v phr</td><td class="p-2.5">Tạo đà, phát triển mạnh ~ gain strength/speed</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">4. Radical</td><td class="p-2.5 border-r">adj</td><td class="p-2.5">Triệt để, cực đoan ~ extreme, fundamental</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">5. Lobby for</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Vận động hành lang ~ campaign, urge</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">6. Animal welfare</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Phúc lợi động vật ~ animal protection/well-being</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">7. Outweigh</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Vượt trội hơn, lấn áp ~ exceed, surpass</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">8. Biomedical testing</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Thử nghiệm sinh y học ~ medical research on animals</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">9. Regulations</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Quy định, luật lệ ~ rules, laws, official directions</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">10. Neglect</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Bỏ mặc, ngó lơ ~ ignore, disregard</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">11. Mere property</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Tài sản thuần túy ~ possession only</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">12. Personhood</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Tư cách pháp nhân/con người ~ legal personality</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">13. Layman's terms</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Thuật ngữ bình dị/dễ hiểu ~ plain English, simple words</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">14. Semantics</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Ngữ nghĩa học ~ study of word meanings</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">15. Arbitrary</td><td class="p-2.5 border-r">adj</td><td class="p-2.5">Tùy tiện, độc đoán ~ random, unfair</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">16. Discrimination</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Sự phân biệt đối xử ~ prejudice, bias</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">17. Speciesism</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Chủ nghĩa phân biệt loài ~ species discrimination</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">18. Self-awareness</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Sự tự nhận thức ~ consciousness of oneself</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">19. Spiritual superiority</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Sự thượng đẳng về tinh thần ~ belief in human arrogance</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">20. Slippery slope</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Vệt dốc trơn trượt (hiệu ứng domino xấu) ~ chain reaction to disaster</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">21. Geneticist</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Nhà di truyền học ~ gene specialist</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">22. Draw the line</td><td class="p-2.5 border-r">idiom</td><td class="p-2.5">Vạch ra ranh giới ~ set a limit</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">23. Mammals</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Động vật có vú ~ warm-blooded vertebrates</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">24. Sentient beings</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Sinh vật có cảm giác ~ creatures capable of feeling</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">25. Distress</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Nỗi đau khổ, tai ưng ~ suffering, pain</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">26. Objective quality</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Phẩm chất khách quan ~ measurable fact</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">27. Captive animals</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Động vật bị giam giữ ~ caged animals in zoos</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">28. Inconsistency</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Sự mâu thuẫn, bất nhất ~ contradiction</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">29. Outspoken defenders</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Những người bảo vệ thẳng thắn ~ vocal advocates</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">30. Primatologist</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Nhà linh trưởng học ~ ape expert</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">31. Responsibilities</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Trách nhiệm ~ duties, obligations</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">32. Obligations</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Nghĩa vụ ~ duties, responsibilities</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">33. Conservation</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Bảo tồn ~ preservation, protection</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">34. Penalties</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Hình phạt ~ punishments, fines</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">35. Well-being</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Sự an lạc, phúc lợi ~ health, welfare, comfort</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">36. Exported</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Xuất khẩu, vận chuyển ra ngoài ~ shipped abroad</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">37. Persuade</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Thuyết phục ~ convince</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">38. Proposal</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Đề xuất ~ plan, scheme</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">39. Extend to</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Mở rộng ra ~ broaden to include</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">40. Demonstrate</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Chứng minh, thể hiện ~ show, prove</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">41. Acquisition</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Sự thu nhận, đạt được ~ gaining, obtaining</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">42. Gulf</td><td class="p-2.5 border-r">n</td><td class="p-2.5">Khoảng cách lớn, vực sâu ~ wide gap/divide</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">43. Reluctant</td><td class="p-2.5 border-r">adj</td><td class="p-2.5">Lưỡng lự, không sẵn lòng ~ unwilling, hesitant</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">44. Cease</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Chấm dứt, dừng ~ stop, end</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">45. Impartial</td><td class="p-2.5 border-r">adj</td><td class="p-2.5">Khách quan, không thiên vị ~ neutral, unbiased</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">46. Suspicious</td><td class="p-2.5 border-r">adj</td><td class="p-2.5">Nghi ngờ ~ skeptical, doubtful</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">47. Moral grounds</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Cơ sở đạo đức ~ ethical reasons</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">48. Inflated terminology</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Thuật ngữ bị phóng đại/phức tạp hóa ~ overly dramatic words</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">49. Kidnapped</td><td class="p-2.5 border-r">v</td><td class="p-2.5">Bắt cóc, đánh cắp ~ abduct, illegally capture</td></tr>
+                                <tr><td class="p-2.5 font-bold text-sky-700 border-r">50. Great Apes</td><td class="p-2.5 border-r">n phr</td><td class="p-2.5">Loài vượn lớn (đại nhân hình) ~ chimps, gorillas, orangutans</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RIGHT PANE: EXERCISES & QUESTIONS -->
+        <section class="w-full md:w-1/2 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
+            <!-- Questions Header -->
+            <div class="bg-sky-700 text-white px-5 py-3 flex justify-between items-center shrink-0 border-b border-sky-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square text-amber-300"></i>
+                    <h2 class="font-bold text-base md:text-lg tracking-wide">QUESTIONS 27–40</h2>
+                </div>
+                <span class="text-xs bg-sky-900 text-sky-200 px-2.5 py-1 rounded-full font-semibold">14 Questions</span>
+            </div>
+
+            <!-- Questions Scrollable Container -->
+            <div class="flex-1 p-6 overflow-y-auto space-y-8 select-text">
+
+                <!-- SECTION 1: QUESTIONS 27-31 SUMMARY COMPLETION -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <h3 class="font-black text-slate-800 text-base mb-2 flex items-center gap-2">
+                        <span class="bg-sky-600 text-white text-xs px-2.5 py-1 rounded-lg">Questions 27–31</span>
+                        Summary Completion
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4 italic">
+                        Complete the summary using the list of words, <strong>A–J</strong>, below. Select the correct letter in each dropdown menu.
+                    </p>
+
+                    <!-- Options Box -->
+                    <div class="bg-white border border-slate-300 rounded-xl p-3 mb-6 grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-semibold text-slate-700">
+                        <div><span class="text-sky-600 font-bold">A.</span> experience</div>
+                        <div><span class="text-sky-600 font-bold">B.</span> well-being</div>
+                        <div><span class="text-sky-600 font-bold">C.</span> knowledge</div>
+                        <div><span class="text-sky-600 font-bold">D.</span> regulations</div>
+                        <div><span class="text-sky-600 font-bold">E.</span> charities</div>
+                        <div><span class="text-sky-600 font-bold">F.</span> research</div>
+                        <div><span class="text-sky-600 font-bold">G.</span> dolphins</div>
+                        <div><span class="text-sky-600 font-bold">H.</span> needs</div>
+                        <div><span class="text-sky-600 font-bold">J.</span> species</div>
+                    </div>
+
+                    <!-- Summary Text with Dropdowns -->
+                    <div class="text-base text-slate-800 leading-relaxed bg-white p-4 border border-slate-200 rounded-xl space-y-3">
+                        <p>
+                            Some people believe that the campaign to grant human rights to the great apes does not go far enough. They want it to include other 
+                            <span class="inline-block mx-1">
+                                <label for="q27" class="sr-only">Question 27</label>
+                                <select id="q27" onchange="checkAnswer('27')" class="bg-slate-100 border-2 border-slate-300 rounded-lg px-2 py-1 font-bold text-slate-800 focus:border-sky-500 focus:outline-none">
+                                    <option value="">27 [ Choose ]</option>
+                                    <option value="A">A. experience</option>
+                                    <option value="B">B. well-being</option>
+                                    <option value="C">C. knowledge</option>
+                                    <option value="D">D. regulations</option>
+                                    <option value="E">E. charities</option>
+                                    <option value="F">F. research</option>
+                                    <option value="G">G. dolphins</option>
+                                    <option value="H">H. needs</option>
+                                    <option value="J">J. species</option>
+                                </select>
+                            </span> 
+                            that are judged to demonstrate understanding.
+                        </p>
+                        <p>
+                            One country introduced 
+                            <span class="inline-block mx-1">
+                                <label for="q28" class="sr-only">Question 28</label>
+                                <select id="q28" onchange="checkAnswer('28')" class="bg-slate-100 border-2 border-slate-300 rounded-lg px-2 py-1 font-bold text-slate-800 focus:border-sky-500 focus:outline-none">
+                                    <option value="">28 [ Choose ]</option>
+                                    <option value="A">A. experience</option>
+                                    <option value="B">B. well-being</option>
+                                    <option value="C">C. knowledge</option>
+                                    <option value="D">D. regulations</option>
+                                    <option value="E">E. charities</option>
+                                    <option value="F">F. research</option>
+                                    <option value="G">G. dolphins</option>
+                                    <option value="H">H. needs</option>
+                                    <option value="J">J. species</option>
+                                </select>
+                            </span> 
+                            which went some way to protecting the apes. As a result, anyone who is interested in using apes for 
+                            <span class="inline-block mx-1">
+                                <label for="q29" class="sr-only">Question 29</label>
+                                <select id="q29" onchange="checkAnswer('29')" class="bg-slate-100 border-2 border-slate-300 rounded-lg px-2 py-1 font-bold text-slate-800 focus:border-sky-500 focus:outline-none">
+                                    <option value="">29 [ Choose ]</option>
+                                    <option value="A">A. experience</option>
+                                    <option value="B">B. well-being</option>
+                                    <option value="C">C. knowledge</option>
+                                    <option value="D">D. regulations</option>
+                                    <option value="E">E. charities</option>
+                                    <option value="F">F. research</option>
+                                    <option value="G">G. dolphins</option>
+                                    <option value="H">H. needs</option>
+                                    <option value="J">J. species</option>
+                                </select>
+                            </span> 
+                            must first obtain the official go-ahead from the state.
+                        </p>
+                        <p>
+                            They will have to prove that any advances gained do not come at the expense of the animal’s 
+                            <span class="inline-block mx-1">
+                                <label for="q30" class="sr-only">Question 30</label>
+                                <select id="q30" onchange="checkAnswer('30')" class="bg-slate-100 border-2 border-slate-300 rounded-lg px-2 py-1 font-bold text-slate-800 focus:border-sky-500 focus:outline-none">
+                                    <option value="">30 [ Choose ]</option>
+                                    <option value="A">A. experience</option>
+                                    <option value="B">B. well-being</option>
+                                    <option value="C">C. knowledge</option>
+                                    <option value="D">D. regulations</option>
+                                    <option value="E">E. charities</option>
+                                    <option value="F">F. research</option>
+                                    <option value="G">G. dolphins</option>
+                                    <option value="H">H. needs</option>
+                                    <option value="J">J. species</option>
+                                </select>
+                            </span> 
+                            . So researchers can now only work on projects that may lead to the acquisition of further 
+                            <span class="inline-block mx-1">
+                                <label for="q31" class="sr-only">Question 31</label>
+                                <select id="q31" onchange="checkAnswer('31')" class="bg-slate-100 border-2 border-slate-300 rounded-lg px-2 py-1 font-bold text-slate-800 focus:border-sky-500 focus:outline-none">
+                                    <option value="">31 [ Choose ]</option>
+                                    <option value="A">A. experience</option>
+                                    <option value="B">B. well-being</option>
+                                    <option value="C">C. knowledge</option>
+                                    <option value="D">D. regulations</option>
+                                    <option value="E">E. charities</option>
+                                    <option value="F">F. research</option>
+                                    <option value="G">G. dolphins</option>
+                                    <option value="H">H. needs</option>
+                                    <option value="J">J. species</option>
+                                </select>
+                            </span> 
+                            about the way apes function and interact.
+                        </p>
+                    </div>
+
+                    <!-- Explanations 27-31 Container -->
+                    <div id="explain-container-27-31" class="mt-4 space-y-3"></div>
+                </div>
+
+                <!-- SECTION 2: QUESTIONS 32-36 MULTIPLE CHOICE -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <h3 class="font-black text-slate-800 text-base mb-2 flex items-center gap-2">
+                        <span class="bg-sky-600 text-white text-xs px-2.5 py-1 rounded-lg">Questions 32–36</span>
+                        Multiple Choice
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4 italic">
+                        Choose the correct letter, <strong>A, B, C or D</strong>. (Option order randomized below)
+                    </p>
+
+                    <div id="mcq-container" class="space-y-6">
+                        <!-- Dynamic MCQ Items populated via JS -->
+                    </div>
+                </div>
+
+                <!-- SECTION 3: QUESTIONS 37-40 YES/NO/NOT GIVEN -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    <h3 class="font-black text-slate-800 text-base mb-2 flex items-center gap-2">
+                        <span class="bg-sky-600 text-white text-xs px-2.5 py-1 rounded-lg">Questions 37–40</span>
+                        YES / NO / NOT GIVEN
+                    </h3>
+                    <p class="text-sm text-slate-600 mb-4 italic">
+                        Choose <strong>YES</strong> if the statement agrees with the claims of the writer, <strong>NO</strong> if it contradicts, or <strong>NOT GIVEN</strong> if it is impossible to say.
+                    </p>
+
+                    <div id="ynng-container" class="space-y-5">
+                        <!-- Dynamic YNNG Items -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RESULT MODAL -->
+    <div id="result-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-sky-600 to-indigo-700 p-6 text-white text-center relative shrink-0">
+                <button onclick="closeResultModal()" class="absolute top-4 right-4 text-white/80 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <i class="fa-solid fa-trophy text-yellow-300 text-5xl mb-2 animate-bounce"></i>
+                <h2 class="text-2xl font-black">KẾT QUẢ BÀI THI IELTS READING</h2>
+                <p class="text-sky-100 text-sm mt-1">Giảng viên Ms Lê Hằng English - IELTS 9.0 Master</p>
+            </div>
+
+            <!-- Modal Content Scrollable -->
+            <div class="p-6 overflow-y-auto space-y-6 text-slate-800">
+
+                <!-- Score Stats Box -->
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="bg-sky-50 border-2 border-sky-200 p-4 rounded-2xl">
+                        <span class="text-xs font-extrabold uppercase text-sky-600 tracking-wider">Số Câu Đúng</span>
+                        <div id="final-score" class="text-3xl font-black text-sky-700 mt-1">0 / 14</div>
+                    </div>
+                    <div class="bg-purple-50 border-2 border-purple-200 p-4 rounded-2xl">
+                        <span class="text-xs font-extrabold uppercase text-purple-600 tracking-wider">Band Điểm Dự Kiến</span>
+                        <div id="final-band" class="text-3xl font-black text-purple-700 mt-1">0.0</div>
+                    </div>
+                </div>
+
+                <!-- Teacher Feedback -->
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-2xl">
+                    <h4 class="font-bold text-amber-900 text-sm flex items-center gap-1.5 mb-1">
+                        <i class="fa-solid fa-comment-dots"></i> Lời Nhận Xét Từ Ms Lê Hằng:
+                    </h4>
+                    <p id="teacher-feedback" class="text-sm text-slate-700 leading-relaxed font-medium">
+                        Chúc mừng bạn đã hoàn thành bài thi!
+                    </p>
+                </div>
+
+                <!-- Academic Band Conversion Table -->
+                <div>
+                    <h4 class="font-extrabold text-slate-900 text-sm mb-2 flex items-center gap-1">
+                        <i class="fa-solid fa-table"></i> Bảng Quy Đổi Band Điểm IELTS Reading (Academic)
+                    </h4>
+                    <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                        <table class="w-full text-center text-xs text-slate-700">
+                            <thead class="bg-slate-100 font-extrabold text-slate-900 uppercase border-b border-slate-200">
+                                <tr>
+                                    <th class="p-2 border-r">Số Câu Đúng (/14)</th>
+                                    <th class="p-2 border-r">Quy Đổi 40 Câu</th>
+                                    <th class="p-2">Band Reading</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-semibold">
+                                <tr><td class="p-2 border-r">13 - 14</td><td class="p-2 border-r">37 - 40</td><td class="p-2 text-emerald-600 font-extrabold">8.5 - 9.0</td></tr>
+                                <tr><td class="p-2 border-r">11 - 12</td><td class="p-2 border-r">33 - 36</td><td class="p-2 text-emerald-600 font-extrabold">7.5 - 8.0</td></tr>
+                                <tr><td class="p-2 border-r">9 - 10</td><td class="p-2 border-r">27 - 32</td><td class="p-2 text-sky-600 font-extrabold">6.5 - 7.0</td></tr>
+                                <tr><td class="p-2 border-r">7 - 8</td><td class="p-2 border-r">20 - 26</td><td class="p-2 text-sky-600 font-extrabold">5.5 - 6.0</td></tr>
+                                <tr><td class="p-2 border-r">5 - 6</td><td class="p-2 border-r">15 - 19</td><td class="p-2 text-amber-600 font-extrabold">5.0</td></tr>
+                                <tr><td class="p-2 border-r">0 - 4</td><td class="p-2 border-r">&lt; 15</td><td class="p-2 text-rose-600 font-extrabold">&lt; 5.0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Contact Promotion -->
+                <div class="bg-gradient-to-r from-sky-50 to-indigo-50 border border-sky-200 p-4 rounded-2xl text-center">
+                    <p class="text-xs font-bold text-slate-600">Muốn nâng Band IELTS Reading & Luyện 1-1 Chuyên Sâu?</p>
+                    <p class="text-sm font-black text-sky-800 mt-0.5">Liên hệ Zalo Ms Lê Hằng: <span class="text-pink-600 text-base">0584 965 348</span></p>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-slate-100 p-4 flex justify-end border-t border-slate-200 shrink-0">
+                <button onclick="closeResultModal()" class="bg-slate-800 hover:bg-slate-900 text-white font-bold px-6 py-2 rounded-xl btn-3d transition">
+                    Đóng & Xem Lại Lời Giải
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // MASTER DATA & ANSWERS
+        const correctAnswers = {
+            '27': 'J',
+            '28': 'D',
+            '29': 'F',
+            '30': 'B',
+            '31': 'C',
+            '32': 'C',
+            '33': 'D',
+            '34': 'A',
+            '35': 'B',
+            '36': 'A',
+            '37': 'NOT GIVEN',
+            '38': 'NO',
+            '39': 'NOT GIVEN',
+            '40': 'YES'
+        };
+
+        // EXPLANATIONS (4-PART DETAILED STRUCTURE)
+        const explanations = {
+            '27': {
+                ans: "J. species",
+                paraId: "para-1",
+                quote: "Other critics argue that the proposal is not radical enough and should be extended to other intelligent social animals such as elephants and dolphins...",
+                trans: "Những nhà phê bình khác tranh luận rằng đề xuất chưa đủ triệt để và nên được mở rộng sang các loài động vật xã hội thông minh khác như voi và cá heo...",
+                synonyms: "other intelligent social animals = other species"
+            },
+            '28': {
+                ans: "D. regulations",
+                paraId: "para-2",
+                quote: "New Zealand considered the possibility of extending human rights to great apes in 1999 as part of its new animal welfare bill. In the end, the bill... give them special status.",
+                trans: "New Zealand đã xem xét khả năng mở rộng quyền con người cho vượn lớn vào năm 1999 như một phần của dự luật phúc lợi động vật mới...",
+                synonyms: "animal welfare bill / legal protection = regulations"
+            },
+            '29': {
+                ans: "F. research",
+                paraId: "para-2",
+                quote: "Testing or teaching involving apes now requires government approval... In effect that means no biomedical testing...",
+                trans: "Việc thử nghiệm hoặc giảng dạy liên quan đến vượn hiện yêu cầu sự phê duyệt của chính phủ... Điều đó có nghĩa là không thử nghiệm sinh y học...",
+                synonyms: "testing or teaching / biomedical testing = research"
+            },
+            '30': {
+                ans: "B. well-being",
+                paraId: "para-2",
+                quote: "...must demonstrate that any likely benefits are not outweighed by harm to the individual animal.",
+                trans: "...phải chứng minh rằng bất kỳ lợi ích tiềm năng nào cũng không bị lấn áp bởi tác hại đối với cá thể động vật đó.",
+                synonyms: "not outweighed by harm = protection of animal's well-being"
+            },
+            '31': {
+                ans: "C. knowledge",
+                paraId: "para-2",
+                quote: "...only studies that increase our understanding of these species.",
+                trans: "...chỉ có các nghiên cứu giúp tăng cường sự hiểu biết của chúng ta về các loài này.",
+                synonyms: "increase our understanding = acquisition of further knowledge"
+            },
+            '32': {
+                ans: "C. to suggest that such inflated terminology is unnecessary.",
+                paraId: "para-3",
+                quote: "‘It seems like a radical idea and that scares people, but when we talk about rights, it really just means protection in layman’s terms,’ she says.",
+                trans: "'Nó có vẻ giống như một ý tưởng cực đoan và làm mọi người sợ, nhưng khi ta nói về quyền, nó thực sự chỉ có nghĩa là sự bảo vệ theo cách nói bình dị,' cô nói.",
+                synonyms: "layman's terms = simplified plain language (suggesting inflated terms like 'personhood' cause unnecessary fear)"
+            },
+            '33': {
+                ans: "D. Human beings want to see themselves as separate from animals.",
+                paraId: "para-3",
+                quote: "‘It’s that gulf between humans and animals that people want to maintain,’ he says.",
+                trans: "'Chính khoảng cách giữa con người và động vật là điều mà mọi người muốn duy trì,' ông nói.",
+                synonyms: "gulf between humans and animals = see themselves as separate from animals"
+            },
+            '34': {
+                ans: "A. sentient animals could not be kept in cages.",
+                paraId: "para-5",
+                quote: "...because it would bring an end to captive animals altogether.",
+                trans: "...bởi vì nó sẽ chấm dứt hoàn toàn việc giam giữ động vật.",
+                synonyms: "end to captive animals = animals could not be kept in cages"
+            },
+            '35': {
+                ans: "B. She is doubtful of its chances of being generally accepted.",
+                paraId: "para-5",
+                quote: "Francione’s approach is certainly several steps too far for many people.",
+                trans: "Phương pháp của Francione chắc chắn là đã đi quá xa đối với nhiều người.",
+                synonyms: "several steps too far for many people = doubtful of its chances of being accepted"
+            },
+            '36': {
+                ans: "A. He recommends focusing on the way people look after animals.",
+                paraId: "para-6",
+                quote: "He believes the emphasis should be on the obligations humans have towards other animals, both for their care and for their conservation.",
+                trans: "Ông tin rằng sự nhấn mạnh nên nằm ở nghĩa vụ mà con người có đối với các loài động vật khác, cả về việc chăm sóc lẫn bảo tồn.",
+                synonyms: "obligations for their care = focusing on the way people look after animals"
+            },
+            '37': {
+                ans: "NOT GIVEN",
+                paraId: "para-2",
+                quote: "No mention in the passage about 'particularly valuable animals' being more likely protected.",
+                trans: "Trong bài đọc không đề cập đến việc động vật 'đặc biệt có giá trị' thì có nhiều khả năng được pháp luật bảo vệ hơn.",
+                synonyms: "Information not found in text."
+            },
+            '38': {
+                ans: "NO",
+                paraId: "para-6",
+                quote: "Primatologist Frans de Waal... says ‘The concept of rights applies only to those capable of carrying responsibilities within our society.’ He believes the emphasis should be on obligations...",
+                trans: "Frans de Waal nói khái niệm về quyền chỉ áp dụng cho người có khả năng gánh vác trách nhiệm. Ông tin nên tập trung vào nghĩa vụ của con người thay vì trao quyền cho động vật.",
+                synonyms: "Highlights human obligations instead of giving rights = Contradicts statement"
+            },
+            '39': {
+                ans: "NOT GIVEN",
+                paraId: "para-7",
+                quote: "Redmond suggests increased penalties... or land rights... but DOES NOT explicitly state whether the overall 'survival rate' would increase.",
+                trans: "Redmond gợi ý tăng hình phạt hoặc trao quyền đất đai, nhưng KHÔNG đưa ra khẳng định liệu 'tỷ lệ sống sót' có tăng lên hay không.",
+                synonyms: "Survival rate is not mentioned."
+            },
+            '40': {
+                ans: "YES",
+                paraId: "para-7",
+                quote: "At the very least, an increased regard for the well-being of apes among people in western countries would lead to a decreased demand for animals being kidnapped from the wild...",
+                trans: "Ít nhất, sự quan tâm gia tăng đến phúc lợi vượn ở phương Tây sẽ dẫn đến sự sụt giảm cầu đối với động vật bị bắt cóc...",
+                synonyms: "increased regard = learned to consider needs | decreased demand for kidnapped apes = fewer apes captured for sale"
+            }
+        };
+
+        // MCQ Questions Raw Data
+        const mcqRawData = [
+            {
+                qNum: '32',
+                question: 'Why does Stumpe refer to ‘layman’s terms’?',
+                options: [
+                    { key: 'A', text: 'to show that many people hold extreme views about animals.' },
+                    { key: 'B', text: 'to suggest that campaigners are reluctant to criticise the law.' },
+                    { key: 'C', text: 'to suggest that such inflated terminology is unnecessary.' },
+                    { key: 'D', text: 'to argue that most people are not interested in protecting animals.' }
+                ]
+            },
+            {
+                qNum: '33',
+                question: 'According to Singer, what is the root of the problem?',
+                options: [
+                    { key: 'A', text: 'Levels of intelligence and awareness differ between species.' },
+                    { key: 'B', text: 'People disagree on how intelligent animals like apes are.' },
+                    { key: 'C', text: 'Moral principles are not easy for everyone to understand.' },
+                    { key: 'D', text: 'Human beings want to see themselves as separate from animals.' }
+                ]
+            },
+            {
+                qNum: '34',
+                question: 'If Francione’s current idea was implemented,',
+                options: [
+                    { key: 'A', text: 'sentient animals could not be kept in cages.' },
+                    { key: 'B', text: 'any form of large-scale agriculture would cease to exist.' },
+                    { key: 'C', text: 'great apes would be granted all the same rights as humans.' },
+                    { key: 'D', text: 'people could no longer offer shelter to an animal.' }
+                ]
+            },
+            {
+                qNum: '35',
+                question: 'What is the writer’s attitude to Francione’s theory?',
+                options: [
+                    { key: 'A', text: 'She is suspicious of the reasoning behind it.' },
+                    { key: 'B', text: 'She is doubtful of its chances of being generally accepted.' },
+                    { key: 'C', text: 'She is reassured by the impartial way it is expressed.' },
+                    { key: 'D', text: 'She is pleased by its logical development.' }
+                ]
+            },
+            {
+                qNum: '36',
+                question: 'How does de Waal change the perspective of the animal rights discussion?',
+                options: [
+                    { key: 'A', text: 'He recommends focusing on the way people look after animals.' },
+                    { key: 'B', text: 'He would give rights only to those animals with a moral sense.' },
+                    { key: 'C', text: 'He says that society should learn to be responsible for all of humanity.' },
+                    { key: 'D', text: 'He thinks that conservation of endangered species should come first.' }
+                ]
+            }
+        ];
+
+        // YNNG Questions Data
+        const ynngRawData = [
+            { qNum: '37', text: 'Particularly valuable animals in captivity are more likely to be protected by law.' },
+            { qNum: '38', text: 'de Waal highlights the need to give human rights to higher order animals.' },
+            { qNum: '39', text: 'If GAP beliefs were implemented in the wild, the survival rate of the larger apes would increase.' },
+            { qNum: '40', text: 'If people in Western countries, for example, learned to consider apes’ needs, fewer apes would be captured for sale.' }
+        ];
+
+        // User State
+        let userAnswers = {};
+        let timerSeconds = 1200; // 20 minutes
+        let timerInterval = null;
+        let isTimerRunning = false;
+
+        // WEB AUDIO API SOUND EFFECTS
+        let audioCtx = null;
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            return audioCtx;
+        }
+
+        function playDingSound() {
+            try {
+                const ctx = getAudioContext();
+                if (ctx.state === 'suspended') ctx.resume();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+                osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.3); // A5
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.3);
+            } catch (e) { console.log(e); }
+        }
+
+        function playWrongSound() {
+            try {
+                const ctx = getAudioContext();
+                if (ctx.state === 'suspended') ctx.resume();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(220, ctx.currentTime);
+                osc.frequency.setValueAtTime(180, ctx.currentTime + 0.15);
+                gain.gain.setValueAtTime(0.25, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.4);
+            } catch (e) { console.log(e); }
+        }
+
+        // SHUFFLE ARRAY ALGORITHM
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // INITIALIZATION
+        window.onload = function() {
+            renderMCQ();
+            renderYNNG();
+        };
+
+        // RENDER MCQ WITH SHUFFLED OPTIONS
+        function renderMCQ() {
+            const container = document.getElementById('mcq-container');
+            container.innerHTML = '';
+
+            mcqRawData.forEach(item => {
+                const shuffledOpts = shuffleArray(item.options);
+                
+                let optsHTML = '';
+                shuffledOpts.forEach(opt => {
+                    optsHTML += `
+                        <button onclick="selectMCQ('${item.qNum}', '${opt.key}', this)" 
+                                data-q="${item.qNum}" data-key="${opt.key}"
+                                class="mcq-btn-${item.qNum} w-full text-left p-3.5 rounded-xl border-2 border-slate-200 bg-white hover:border-sky-400 hover:bg-sky-50/50 transition font-medium text-sm flex items-start gap-3">
+                            <span class="w-6 h-6 rounded-full bg-slate-100 border border-slate-300 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">${opt.key}</span>
+                            <span class="text-slate-800 leading-snug">${opt.text}</span>
+                        </button>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div id="mcq-box-${item.qNum}" class="bg-white p-4 rounded-xl border border-slate-200 space-y-3">
+                        <p class="font-bold text-slate-900 text-sm">
+                            <span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded text-xs mr-1">${item.qNum}</span>
+                            ${item.question}
+                        </p>
+                        <div class="space-y-2">
+                            ${optsHTML}
+                        </div>
+                        <div id="mcq-explain-${item.qNum}"></div>
+                    </div>
+                `;
+            });
+        }
+
+        // RENDER YNNG
+        function renderYNNG() {
+            const container = document.getElementById('ynng-container');
+            container.innerHTML = '';
+
+            ynngRawData.forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 flex flex-col gap-3">
+                        <div class="flex items-start justify-between gap-3">
+                            <p class="text-sm font-semibold text-slate-800 leading-relaxed">
+                                <span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded text-xs font-bold mr-1">${item.qNum}</span>
+                                ${item.text}
+                            </p>
+                            <label for="q${item.qNum}" class="sr-only">Question ${item.qNum}</label>
+                            <select id="q${item.qNum}" onchange="checkAnswer('${item.qNum}')" class="bg-slate-100 border-2 border-slate-300 rounded-lg px-3 py-1.5 font-bold text-sm text-slate-800 focus:border-sky-500 focus:outline-none shrink-0">
+                                <option value="">[ Choose ]</option>
+                                <option value="YES">YES</option>
+                                <option value="NO">NO</option>
+                                <option value="NOT GIVEN">NOT GIVEN</option>
+                            </select>
+                        </div>
+                        <div id="ynng-explain-${item.qNum}"></div>
+                    </div>
+                `;
+            });
+        }
+
+        // HANDLE MCQ SELECTION
+        function selectMCQ(qNum, selectedKey, btnElem) {
+            userAnswers[qNum] = selectedKey;
+            
+            // Clear styles for this question's buttons
+            const buttons = document.querySelectorAll(`.mcq-btn-${qNum}`);
+            buttons.forEach(b => {
+                b.className = `mcq-btn-${qNum} w-full text-left p-3.5 rounded-xl border-2 border-slate-200 bg-white hover:border-sky-400 transition font-medium text-sm flex items-start gap-3`;
+                b.querySelector('span').className = 'w-6 h-6 rounded-full bg-slate-100 border border-slate-300 text-slate-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5';
+            });
+
+            const isCorrect = (selectedKey === correctAnswers[qNum]);
+            
+            if (isCorrect) {
+                btnElem.className = `mcq-btn-${qNum} w-full text-left p-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 transition font-medium text-sm flex items-start gap-3`;
+                btnElem.querySelector('span').className = 'w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5';
+                playDingSound();
+                confetti({ particleCount: 30, spread: 60, origin: { y: 0.7 } });
+            } else {
+                btnElem.className = `mcq-btn-${qNum} w-full text-left p-3.5 rounded-xl border-2 border-rose-500 bg-rose-50 transition font-medium text-sm flex items-start gap-3`;
+                btnElem.querySelector('span').className = 'w-6 h-6 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5';
+                playWrongSound();
+            }
+
+            renderExplanation(qNum, `mcq-explain-${qNum}`);
+            updateProgress();
+        }
+
+        // CHECK ANSWER FOR DROPDOWNS (27-31 & YNNG)
+        function checkAnswer(qNum) {
+            const selectElem = document.getElementById(`q${qNum}`);
+            const val = selectElem.value;
+            userAnswers[qNum] = val;
+
+            const isCorrect = (val === correctAnswers[qNum]);
+
+            if (val === '') {
+                selectElem.className = "bg-slate-100 border-2 border-slate-300 rounded-lg px-2 py-1 font-bold text-slate-800 focus:outline-none";
+            } else if (isCorrect) {
+                selectElem.className = "bg-emerald-100 border-2 border-emerald-500 text-emerald-900 rounded-lg px-2 py-1 font-bold focus:outline-none";
+                playDingSound();
+                confetti({ particleCount: 25, spread: 50, origin: { y: 0.7 } });
+            } else {
+                selectElem.className = "bg-rose-100 border-2 border-rose-500 text-rose-900 rounded-lg px-2 py-1 font-bold focus:outline-none";
+                playWrongSound();
+            }
+
+            let explainTarget = `ynng-explain-${qNum}`;
+            if (parseInt(qNum) <= 31) {
+                explainTarget = `explain-container-27-31`;
+            }
+            renderExplanation(qNum, explainTarget);
+            updateProgress();
+        }
+
+        // RENDER EXPLANATION BOX (4-PART STRUCTURE)
+        function renderExplanation(qNum, containerId) {
+            const exp = explanations[qNum];
+            if (!exp) return;
+
+            let container = document.getElementById(containerId);
+            
+            // For summary completion 27-31, append into single container
+            if (parseInt(qNum) <= 31) {
+                let existingBox = document.getElementById(`exp-box-${qNum}`);
+                if (!existingBox) {
+                    existingBox = document.createElement('div');
+                    existingBox.id = `exp-box-${qNum}`;
+                    container.appendChild(existingBox);
+                }
+                container = existingBox;
+            }
+
+            const userChoice = userAnswers[qNum] || 'Chưa chọn';
+            const isCorrect = (userChoice === correctAnswers[qNum]);
+
+            container.innerHTML = `
+                <div class="mt-3 p-4 bg-sky-50 border border-sky-200 rounded-xl space-y-2 text-xs md:text-sm">
+                    <div class="flex items-center justify-between border-b border-sky-200 pb-2">
+                        <span class="font-extrabold text-sky-900">GIẢI THÍCH CHI TIẾT CÂU ${qNum}</span>
+                        <span class="${isCorrect ? 'bg-emerald-600' : 'bg-rose-600'} text-white px-2 py-0.5 rounded font-black text-xs">
+                            ${isCorrect ? 'ĐÚNG' : 'SAI'}
+                        </span>
+                    </div>
+                    <p class="font-extrabold text-slate-800">
+                        1. ĐÁP ÁN CHUẨN: <span class="text-emerald-700 font-black">${exp.ans}</span>
+                    </p>
+                    <p class="text-slate-700">
+                        <strong>2. ĐOẠN CHỨA ĐÁP ÁN:</strong> <span class="italic text-slate-800">"${exp.quote}"</span>
+                    </p>
+                    <p class="text-slate-700">
+                        <strong>3. DỊCH NGHĨA:</strong> <span class="text-slate-800">${exp.trans}</span>
+                    </p>
+                    <p class="text-slate-700">
+                        <strong>4. CỤM TỪ ĐỒNG NGHĨA (SYNONYMS):</strong> <span class="bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-semibold">${exp.synonyms}</span>
+                    </p>
+                    <div class="pt-1 flex justify-end">
+                        <button onclick="scrollToEvidence('${exp.paraId}')" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-3 py-1.5 rounded-lg text-xs btn-3d-blue flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> 定位 Dẫn Chứng Trong Bài Reading
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // LOCATE EVIDENCE ACTION
+        function scrollToEvidence(paraId) {
+            const target = document.getElementById(paraId);
+            if (!target) return;
+
+            // Remove existing highlight target classes
+            document.querySelectorAll('.evidence-target').forEach(el => el.classList.remove('evidence-target'));
+
+            // Scroll into view
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            target.classList.add('evidence-target');
+
+            setTimeout(() => {
+                target.classList.remove('evidence-target');
+            }, 4000);
+        }
+
+        // PROGRESS TRACKER
+        function updateProgress() {
+            const total = 14;
+            const answeredCount = Object.keys(userAnswers).filter(k => userAnswers[k] !== '').length;
+            const percentage = Math.round((answeredCount / total) * 100);
+
+            document.getElementById('progress-text').innerText = `${answeredCount}/${total} (${percentage}%)`;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+        }
+
+        // TIMER LOGIC
+        function toggleTimer() {
+            const btn = document.getElementById('start-pause-btn');
+            if (isTimerRunning) {
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+                btn.innerHTML = `<i class="fa-solid fa-play mr-1"></i> TIẾP TỤC TÍNH GIỜ`;
+                btn.className = "ml-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg btn-3d-blue transition";
+            } else {
+                isTimerRunning = true;
+                btn.innerHTML = `<i class="fa-solid fa-pause mr-1"></i> TẠM DỪNG`;
+                btn.className = "ml-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg btn-3d transition";
+                
+                timerInterval = setInterval(() => {
+                    timerSeconds--;
+                    updateTimerDisplay();
+
+                    if (timerSeconds <= 0) {
+                        clearInterval(timerInterval);
+                        isTimerRunning = false;
+                        alert("⏰ Đã hết giờ làm bài! Vui lòng nộp bài để xem kết quả chi tiết.");
+                        disableAllInputs();
+                        submitExam();
+                    }
+                }, 1000);
+            }
+        }
+
+        function updateTimerDisplay() {
+            const m = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+            const s = (timerSeconds % 60).toString().padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${m}:${s}`;
+        }
+
+        function disableAllInputs() {
+            document.querySelectorAll('select').forEach(s => s.disabled = true);
+            document.querySelectorAll('button[onclick^="selectMCQ"]').forEach(b => b.disabled = true);
+        }
+
+        // TRANSLATION TOGGLE
+        function toggleTranslation(id) {
+            const elem = document.getElementById(id);
+            if (elem) {
+                elem.classList.toggle('hidden');
+            }
+        }
+
+        // TEXT HIGHLIGHTER FEATURE
+        function highlightSelectedText() {
+            const selection = window.getSelection();
+            if (!selection.rangeCount || selection.isCollapsed) return;
+
+            const range = selection.getRangeAt(0);
+            const span = document.createElement('span');
+            span.className = 'custom-highlight';
+            
+            try {
+                range.surroundContents(span);
+            } catch (e) {
+                console.log("Cannot highlight across multiple elements:", e);
+            }
+            selection.removeAllRanges();
+        }
+
+        // SUBMIT EXAM & CALCULATE BAND SCORE
+        function submitExam() {
+            let correctCount = 0;
+
+            for (let qNum in correctAnswers) {
+                if (userAnswers[qNum] === correctAnswers[qNum]) {
+                    correctCount++;
+                }
+            }
+
+            // Estimate IELTS Band based on 14 questions scaled to 40
+            const scaledScore = Math.round((correctCount / 14) * 40);
+            let band = "4.0";
+            let feedback = "";
+
+            if (scaledScore >= 37) { band = "8.5 - 9.0"; feedback = "Xuất sắc tuyệt đối! Kỹ năng Reading của bạn đã đạt chuẩn IELTS 9.0 Master. Hãy duy trì phong độ!"; }
+            else if (scaledScore >= 33) { band = "7.5 - 8.0"; feedback = "Làm bài rất tốt! Bạn nắm từ vựng Academic và Paraphrase rất vững. Chỉ cần tinh ý thêm một chút ở các câu suy luận nâng cao."; }
+            else if (scaledScore >= 27) { band = "6.5 - 7.0"; feedback = "Kết quả khá tốt! Bạn đã đạt mức Band điểm mục tiêu của nhiều bạn. Hãy rèn luyện thêm khả năng phân biệt YES/NO/NOT GIVEN nhé."; }
+            else if (scaledScore >= 20) { band = "5.5 - 6.0"; feedback = "Khá tốt! Bạn đã hiểu nền tảng bài đọc. Cần mở rộng thêm vốn từ vựng Academic Glossary bên dưới để tăng tốc độ làm bài."; }
+            else if (scaledScore >= 15) { band = "5.0"; feedback = "Cố gắng lên nhé! Hãy dành thời gian xem kỹ phần giải thích chi tiết và ghi chú lại các cụm từ đồng nghĩa (Synonyms) Ms Lê Hằng đã soạn."; }
+            else { band = "< 5.0"; feedback = "Đừng nản lòng nhé! Kỹ năng Reading cần thời gian tích lũy từ vựng. Đăng ký học 1-1 cùng Ms Lê Hằng (Zalo 0584 965 348) để được hướng dẫn phương pháp làm bài hiệu quả!"; }
+
+            document.getElementById('final-score').innerText = `${correctCount} / 14`;
+            document.getElementById('final-band').innerText = band;
+            document.getElementById('teacher-feedback').innerText = feedback;
+
+            document.getElementById('result-modal').classList.remove('hidden');
+            confetti({ particleCount: 100, spread: 80, origin: { y: 0.5 } });
+        }
+
+        function closeResultModal() {
+            document.getElementById('result-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
